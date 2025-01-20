@@ -1,9 +1,9 @@
 class Solution {
 public:
     int firstCompleteIndex(vector<int>& arr, vector<vector<int>>& mat) {
-        map<int, pair<int, int>> mp;
         int rows = mat.size();
         int columns = mat[0].size();
+        vector<pair<int, int>> mp(rows * columns + 1);
         for(int i=0; i<rows; i++){
             for(int j=0; j<columns; j++){
                 mp[mat[i][j]] = make_pair(i, j);
