@@ -5,9 +5,8 @@
  */
 var map = function(arr, fn) {
     let ans = []
-    for(let i=0; i<arr.length; i++){
-        ans[i] = fn(arr[i], i);
-    }
-    // console.log(arr);
+    arr.forEach((item, i)=>{
+        ans[i] = fn(item, i);
+    })
     return ans;
 };
