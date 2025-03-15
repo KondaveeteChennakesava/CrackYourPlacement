@@ -15,9 +15,9 @@ class Solution {
     }
 public:
     int minCapability(vector<int>& nums, int k) {
-        int low = 1;
+        int low = *min_element(nums.begin(), nums.end());
         int high = *max_element(nums.begin(), nums.end());
-        int ans = 0;
+        int ans = -1;
         int mid;
         while(low <= high){
             mid = low + (high - low) / 2;
