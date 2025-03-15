@@ -1,15 +1,15 @@
 class Solution {
-    bool canPlace(int &mid, vector<int> &nums, int &k){
+    bool canPlace(int &mid, vector<int> &nums, int k){
+        int n = nums.size();
         int idx = 0;
-        int count = 0;
-        while(idx < nums.size()){
+        while(idx < n){
             if(nums[idx] <= mid){
-                count++;
+                k--;
                 idx += 2;
             }else{
                 idx += 1;
             }
-            if(count >= k)return true;
+            if(k == 0)return true;
         }
         return false;
     }
